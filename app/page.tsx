@@ -37,13 +37,19 @@ export default function Home() {
     else if((spots[4] === spots[2] && spots[4] === spots[6]) ||
     (spots[4] === spots[3] && spots[4] === spots[5]) ||
     (spots[4] === spots[1] && spots[4] === spots[7])){
-      if(spots[4] !== '#') setWinner(spots[4])}
-    
+      if(spots[4] !== '#') setWinner(spots[4])} 
+  }
+
+  function restart():void{
+    setWinner("");
+    setSpots("#########");
+    setPlayer('x');
   }
 
   return (
     <div className="grid items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <h2> Current Player is: {player}</h2>
+      <button className="button" onClick={() => restart()}> Restart</button>
       {(winner) && <h2>The Winner is: {winner}</h2>}
       <div className="square">
         <div className="smaller_square" onClick={() => setSpotHelper(1)}>

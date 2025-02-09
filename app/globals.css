@@ -20,6 +20,22 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.button {
+  color: aquamarine;
+  position: absolute;
+  height: 5%;
+  right: 20%;
+  top: 12%;
+  z-index: 1;
+  border-style: outset;
+  border-color: aquamarine;
+  border-width: 3px;
+}
+
+.button:active {
+  border-style: inset;
+}
+
 .smaller_square {
   height: 33.333%;
   width: 33.333%;
