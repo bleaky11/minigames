@@ -53,4 +53,11 @@ body {
   clear: both;
   background-color: #ededed;
   float: left;
+  display: inline-block
+}
+
+.winnerBox {
+  position: absolute;
+  left: 20%;
+  float: right;
 }

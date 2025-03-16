@@ -10,6 +10,8 @@ export default function Home() {
   const [spots, setSpots] = useState<string>('#########')
   const [player, setPlayer] = useState<player>('x')
   const [winner, setWinner] = useState<string>()
+  const [onewins, update1wins] = useState<number>(0)
+  const [twowins, update2wins] = useState<number>(0)
 
   function setSpotHelper(num: number): void {
     const newSpots = spots.slice(0, num -1) + (player as string) + spots.slice(num)
@@ -27,17 +29,34 @@ export default function Home() {
   }, [spots]);
 
   function checkWinner(): void {
+    let hasWinner = 0
     if((spots[0] === spots[1] && spots[1] === spots[2] )||
     (spots[0] === spots[3] && spots[3] === spots[6]) ||
     (spots[0] === spots[4] && spots[4] === spots[8])){
-      if(spots[0] !== '#') setWinner(spots[0])}
+      if(spots[0] !== '#') {
+        setWinner(spots[0]);
+        hasWinner = 1;
+      }
+    }
     else if((spots[8] === spots[7] && spots[7] === spots[6]) || 
     (spots[8] === spots[5] && spots[5] === spots[2])){
-      if(spots[8] !== '#') setWinner(spots[8])}
+      if(spots[8] !== '#') {
+        setWinner(spots[0]);
+        hasWinner = 1;
+      }
+    }
     else if((spots[4] === spots[2] && spots[4] === spots[6]) ||
     (spots[4] === spots[3] && spots[4] === spots[5]) ||
     (spots[4] === spots[1] && spots[4] === spots[7])){
-      if(spots[4] !== '#') setWinner(spots[4])} 
+      if(spots[4] !== '#') {
+        setWinner(spots[0]);
+        hasWinner = 1;
+      } 
+    }
+      if(hasWinner){
+        if(player == 'x'){update1wins(onewins + 1)}
+        else update2wins(twowins + 1)
+      }
   }
 
   function restart():void{
@@ -88,6 +107,10 @@ export default function Home() {
           {spots[8] == 'o' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
           {spots[8] == 'x' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
         </div>
+      </div>
+      <div className="winnerBox">
+        <h1>Player O: {onewins}</h1> 
+        <h1>Player X: {twowins}</h1>
       </div>
     </div>
   );
