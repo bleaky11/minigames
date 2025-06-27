@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import Image from 'next/image';
 import Circle from "./Images/LetterO.png"
 import Cross from "./Images/LetterX.png"
-type player = 'x' | 'o'
+type player = 'X' | 'O'
 
 export default function Home() {
   const [spots, setSpots] = useState<string>('#########')
-  const [player, setPlayer] = useState<player>('x')
+  const [player, setPlayer] = useState<player>('X')
   const [winner, setWinner] = useState<string>()
   const [onewins, update1wins] = useState<number>(0)
   const [twowins, update2wins] = useState<number>(0)
@@ -17,8 +17,8 @@ export default function Home() {
     const newSpots = spots.slice(0, num -1) + (player as string) + spots.slice(num)
     if(spots[num - 1] === '#' && !winner){
       setSpots(newSpots)
-      if(player == 'x') setPlayer('o');
-      else setPlayer('x');
+      if(player == 'X') setPlayer('O');
+      else setPlayer('X');
     }
     
   }
@@ -54,7 +54,7 @@ export default function Home() {
       } 
     }
       if(hasWinner){
-        if(player == 'x'){update1wins(onewins + 1)}
+        if(player == 'X'){update1wins(onewins + 1)}
         else update2wins(twowins + 1)
       }
   }
@@ -62,7 +62,7 @@ export default function Home() {
   function restart():void{
     setWinner("");
     setSpots("#########");
-    setPlayer('x');
+    setPlayer('X');
   }
 
   return (
@@ -72,46 +72,44 @@ export default function Home() {
       {(winner) && <h2>The Winner is: {winner}</h2>}
       <div className="square">
         <div className="smaller_square" onClick={() => setSpotHelper(1)}>
-          {spots[0] == 'o' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
-          {spots[0] == 'x' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
+          {spots[0] == 'O' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
+          {spots[0] == 'X' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
         </div>
         <div className="smaller_square" onClick={() => setSpotHelper(2)}>
-          {spots[1] == 'o' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
-          {spots[1] == 'x' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
+          {spots[1] == 'O' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
+          {spots[1] == 'X' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
         </div>
         <div className="smaller_square" onClick={() => setSpotHelper(3)}>
-          {spots[2] == 'o' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
-          {spots[2] == 'x' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
+          {spots[2] == 'O' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
+          {spots[2] == 'X' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
         </div>
         <div className="smaller_square" onClick={() => setSpotHelper(4)}>
-          {spots[3] == 'o' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
-          {spots[3] == 'x' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
+          {spots[3] == 'O' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
+          {spots[3] == 'X' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
         </div>
         <div className="smaller_square" onClick={() => setSpotHelper(5)}>
-          {spots[4] == 'o' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
-          {spots[4] == 'x' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
+          {spots[4] == 'O' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
+          {spots[4] == 'X' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
         </div>
         <div className="smaller_square" onClick={() => setSpotHelper(6)}>
-          {spots[5] == 'o' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
-          {spots[5] == 'x' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
+          {spots[5] == 'O' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
+          {spots[5] == 'X' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
         </div>
         <div className="smaller_square" onClick={() => setSpotHelper(7)}>
-          {spots[6] == 'o' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
-          {spots[6] == 'x' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
+          {spots[6] == 'O' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
+          {spots[6] == 'X' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
         </div>
         <div className="smaller_square" onClick={() => setSpotHelper(8)}>
-          {spots[7] == 'o' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
-          {spots[7] == 'x' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
+          {spots[7] == 'O' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
+          {spots[7] == 'X' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
         </div>
         <div className="smaller_square" onClick={() => setSpotHelper(9)}>
-          {spots[8] == 'o' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
-          {spots[8] == 'x' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
+          {spots[8] == 'O' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
+          {spots[8] == 'X' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
         </div>
       </div>
-      <div className="winnerBox">
         <h1>Player O: {onewins}</h1> 
         <h1>Player X: {twowins}</h1>
-      </div>
     </div>
   );
 }
