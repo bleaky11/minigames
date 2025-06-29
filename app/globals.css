@@ -22,7 +22,7 @@ body {
 
 .button {
   color: aquamarine;
-  position: absolute;
+  position: fixed;
   height: 5%;
   right: 20%;
   top: 12%;

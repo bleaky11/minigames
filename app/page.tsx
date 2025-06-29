@@ -66,7 +66,7 @@ export default function Home() {
   }
 
   return (
-    <div className="grid items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)] position-fixed">
       <h2> Current Player is: {player}</h2>
       <button className="button" onClick={() => restart()}> Restart</button>
       {(winner) && <h2>The Winner is: {winner}</h2>}
@@ -107,9 +107,11 @@ export default function Home() {
           {spots[8] == 'O' && (<Image src={Circle} alt="circle here" width='166' height="166"/>)}
           {spots[8] == 'X' && (<Image src={Cross} alt="circle here" width='166' height="166"/>)}
         </div>
-      </div>
+      <div className=" justify-items-center">
         <h1>Player O: {onewins}</h1> 
         <h1>Player X: {twowins}</h1>
+      </div>
+      </div>
     </div>
   );
 }
