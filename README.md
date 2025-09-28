@@ -1,3 +1,8 @@
+This is my own webpage where I keep small projects I worked on together. 
+Currently only has tictactoe.
+Working on transferring my c++ Snake game here.
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
