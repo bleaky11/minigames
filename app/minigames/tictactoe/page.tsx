@@ -5,9 +5,11 @@ import Image from 'next/image';
 import Circle from "./Images/LetterO.png";
 import Cross from "./Images/LetterX.png";
 import './tictactoe.css';
+import { useRouter } from "next/navigation";
 type player = 'X' | 'O'
 
 export default function TicTacToe() {
+  const router = useRouter();
   const [spots, setSpots] = useState<string>('#########')
   const [player, setPlayer] = useState<player>('X')
   const [winner, setWinner] = useState<string>()
@@ -67,8 +69,9 @@ export default function TicTacToe() {
   }
 
   return (
-    <div className="body">
+    <div className="ttt-body">
       <button className="restart_button" onClick={() => restart()}> restart </button>
+      <button className="exit_button" onClick={()=> router.push("/")}>Exit</button>
       <div>
         <h2 className="winnerHeader"> Current Player is: {player}</h2>
         {(winner) && <h2>The Winner is: {winner}</h2>}

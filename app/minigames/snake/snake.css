@@ -1,0 +1,80 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --back: linear-gradient(to bottom left, rgba(235, 245, 163, 1), rgba(247, 132, 0, 1), rgba(236, 30, 30, 1));
+    --fore: #ededed;
+  }
+}
+
+.body {
+  color: var(--foreground);
+  background: linear-gradient(to bottom left, rgba(235, 245, 163, 1),rgba(236, 30, 30, 1));
+  animation: animated_background 12s infinite;
+  background-size: 400% 400%;
+  
+  display: grid;
+  align-items: center;         /* items-center */
+  justify-items: center;       /* justify-items-center */
+  min-height: 100vh;           /* min-h-screen */
+  padding: 2rem;               /* p-8 */
+  padding-bottom: 5rem;        /* pb-20 */
+  font-family: var(--font-geist-sans), sans-serif; /* font-[family-name:...] */
+}
+
+@keyframes animated_background
+{
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.grid{
+    background: black;
+    min-width: 600px;
+    min-height: 600px;
+    border: 3px solid white;
+    display:grid;
+    grid-template-columns: repeat(15, 40px); /* 15 columns, each 20px wide */
+    grid-template-rows: repeat(15, 40px);    /* 15 rows, each 20px tall */
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+}
+
+.cell-empty{background-color:black}
+.cell-snake{background-color:white}
+.cell-fruit{background-color:red}
+
+
+.restart_button{
+  color: white;
+  position: absolute;
+  height: 5%;
+  right: 10%;
+  top: 20%;
+  z-index: 1;
+  padding: 0.5em;
+  border-style: outset;
+  border-color: white;
+  border-width: 3px;
+}
+
+.exit_button{
+  color: white;
+  position: absolute;
+  height: 5%;
+  right: 10%;
+  top: 30%;
+  z-index: 1;
+  padding: 0.5em;
+  border-style: outset;
+  border-color: white;
+  border-width: 3px;
+}

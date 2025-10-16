@@ -1,8 +1,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: linear-gradient(to bottom left, rgba(1, 70, 19, 1), rgba(1, 60, 5, 1), rgba(6, 0, 130, 1));
-    --foreground: #ededed;
+    --back: linear-gradient(to bottom left, rgba(1, 70, 19, 1), rgba(1, 60, 5, 1), rgba(6, 0, 130, 1));
+    --fore: #ededed;
   }
 }
 
@@ -19,7 +19,7 @@
   }
 }
 
-.body {
+.ttt-body {
   color: var(--foreground);
   background: linear-gradient(to bottom left, #00f9bfff, #0044ba);
   animation: animated_background 12s infinite;
@@ -34,7 +34,7 @@
   font-family: var(--font-geist-sans), sans-serif; /* font-[family-name:...] */
 }
 
-.header {
+.ttt-header {
   color: var(--foreground);
   background: linear-gradient(to bottom left, #00f9bfff, #0044ba);
   animation: animated_background 12s infinite;
@@ -56,6 +56,19 @@
   }
 }
 
+.exit_button{
+  color: white;
+  position: absolute;
+  height: 5%;
+  right: 10%;
+  top: 30%;
+  z-index: 1;
+  padding: 0.5em;
+  border-style: outset;
+  border-color: white;
+  border-width: 3px;
+}
+
 .restart_button {
   color: white;
   position: absolute;
@@ -67,6 +80,7 @@
   border-style: outset;
   border-color: white;
   border-width: 3px;
+  padding: 0.5em;
 }
 
 .button:active {
