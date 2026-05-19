@@ -6,19 +6,23 @@ import "./homepage.css"
 function App()
 {
     const router = useRouter();
-    let cursor: HTMLDivElement | null = document.querySelector(".cursor");
+    let cursor: HTMLDivElement | null;
+    if(typeof document !== 'undefined')
+        cursor = document.querySelector(".cursor");
 
     // Position cursor div to cursor position
-    document.addEventListener("mousemove", (e) => {
-        if(cursor){
-            const x = e.clientX;
-            const y = e.clientY;
-            cursor.style.left = x + "px";
-            cursor.style.top = y + "px";
-        }if(!cursor){
-            cursor = document.querySelector(".cursor");
-        }
-    }); 
+    if(typeof document !== 'undefined'){
+        document.addEventListener("mousemove", (e) => {
+            if(cursor){
+                const x = e.clientX;
+                const y = e.clientY;
+                cursor.style.left = x + "px";
+                cursor.style.top = y + "px";
+            }if(!cursor){
+                cursor = document.querySelector(".cursor");
+            }
+        }); 
+    }  
 
     return(
         <div className="screen">

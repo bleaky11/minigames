@@ -62,7 +62,7 @@
     display: grid;
     align-items: center;         /* items-center */
     justify-items: center;       /* justify-items-center */
-    min-height: 100vh;
+    min-height: 95vh;
 }
 
 .cursor {
