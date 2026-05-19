@@ -1,7 +1,6 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --back: linear-gradient(to bottom left, rgba(1, 70, 19, 1), rgba(1, 60, 5, 1), rgba(6, 0, 130, 1));
     --fore: #ededed;
   }
 }
